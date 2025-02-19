@@ -61,8 +61,8 @@ override printDetails(): void {
   console.log(`Make: ${this.make}`);
   console.log(`Model: ${this.model}`);
   console.log(`Year: ${this.year}`);
-  console.log(`Weight: ${this.weight}`);
-  console.log(`Top Speed: ${this.topSpeed}`);
+  console.log(`Weight: ${this.weight} lbs`);
+  console.log(`Top Speed: ${this.topSpeed} mph`);
   console.log(`Color: ${this.color}`);
   console.log(
       `Front Wheel: ${this.wheels[0].getDiameter} inches with a ${this.wheels[0].getTireBrand} tires`
