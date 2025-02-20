@@ -65,10 +65,10 @@ override printDetails(): void {
   console.log(`Top Speed: ${this.topSpeed} mph`);
   console.log(`Color: ${this.color}`);
   console.log(
-      `Front Wheel: ${this.wheels[0].getDiameter} inches with a ${this.wheels[0].getTireBrand} tires`
+      `Front Wheel: ${this.wheels[0].getDiameter} inches with a ${this.wheels[0].getTireBrand} tire`
     );
   console.log(
-      `Rear Wheel: ${this.wheels[1].getDiameter} inches with a ${this.wheels[1].getTireBrand} tires`
+      `Rear Wheel: ${this.wheels[1].getDiameter} inches with a ${this.wheels[1].getTireBrand} tire`
     );
   }
 }
