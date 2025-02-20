@@ -333,6 +333,12 @@ class Cli {
         },
       ])
       .then((answers) => {
+        const selectedVehicle = this.vehicles.find(
+          (vehicle) => vehicle.vin === this.selectedVehicleVin
+        );
+        if (!selectedVehicle) return;
+
+
         // perform the selected action
         if (answers.action === 'Print details') {
           // find the selected vehicle and print its details
@@ -391,10 +397,10 @@ class Cli {
             }
           }
         }
-        // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous. - DONE
+        // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous. -
        else if (answers.action === 'Tow a vehicle') {
-          if (vehicle instanceof Truck) {
-            this.findVehicleToTow(vehicle);
+          if (selectedVehicle instanceof Truck) {
+            this.findVehicleToTow(selectedVehicle);
             return;
           } else {
             console.log('Tow action is only available for trucks.');
@@ -402,8 +408,8 @@ class Cli {
         }       
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike - DONE
         else if (answers.action === 'Pop a wheelie') {
-          if (vehicle instanceof Motorbike) {
-            vehicle.wheelie();
+          if (selectedVehicle instanceof Motorbike) {
+            selectedVehicle.wheelie();
           } else {
             console.log('This action is only available for motorbikes.');
           }
